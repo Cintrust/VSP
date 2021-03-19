@@ -90,10 +90,11 @@ class MarketController extends Controller
             "seller_id" => $player->team_id,
             "player_id" => $player->id,
             "price" => $data['price'],
-        ]);
+        ])->refresh();
 
         $market->load(["team:id,country,name",
             "player:id,first_name,last_name,country,age,position"]);
+
 
 
         return response($market, 201);
