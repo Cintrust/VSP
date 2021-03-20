@@ -29,7 +29,6 @@ class PlayersRouteTest extends TestCase
             User::factory()->admin()->create(),
         );
 
-
         $response = $this->get(route("get_all_players"));
 
         $response->assertOk();
